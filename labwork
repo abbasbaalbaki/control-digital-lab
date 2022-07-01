@@ -1,0 +1,18 @@
+import serial
+import getch
+serialport = serial.serial("/dev/tty50")
+seria(true):
+    x = getch.getch()
+    if x == 'w':
+        command="+200+20015+00"
+    elif x=='d':
+        command="+200-20015+00"
+    elif x=='a':
+        command="-200+20015+00"
+    elif x=='s':
+        command="-200-20015+00"
+    elif x=='m':
+        command="+000+00015+00"
+    elif x== 'q':
+        break
+    serialport.write(command.encode())
